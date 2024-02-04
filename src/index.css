@@ -1,0 +1,11 @@
+div + label {
+    text-align: center;
+}
+
+#moon {
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+}

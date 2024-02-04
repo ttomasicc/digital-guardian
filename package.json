@@ -1,0 +1,31 @@
+{
+  "name": "digital-guardian",
+  "productName": "Digital Guardian",
+  "version": "1.0.0",
+  "description": "Digital Guardian App",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:watch": "electronmon .",
+    "build": "npx electron-packager . digital-guardian --executableName digital-guardian --icon src/favicon.ico --out dist/ --overwrite true",
+    "build:deb64": "electron-installer-debian --src dist/digital-guardian-linux-x64/ --icon src/favicon.ico --dest dist/installers/ --arch amd64",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "security",
+    "cryptography",
+    "signature"
+  ],
+  "author": "Tin Tomašić",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "@electron/packager": "^18.0.0",
+    "electron": "^27.0.4",
+    "electron-installer-debian": "^3.2.0",
+    "electronmon": "^2.0.2"
+  },
+  "dependencies": {
+    "@picocss/pico": "^1.5.10",
+    "dotenv": "^16.3.1"
+  }
+}

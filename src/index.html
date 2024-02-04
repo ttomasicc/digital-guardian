@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+<head>
+    <title>Digital Guardian</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+    <link rel="stylesheet" href="../node_modules/@picocss/pico/css/pico.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<main class="container">
+    <nav>
+        <ul>
+            <li><strong>⚝ Digital Guardian ⚝</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#h1_key_info">Key Info</a></li>
+            <li><a href="#h1_crypto">Cryptography</a></li>
+            <li><a href="#h1_digital_signature">Digital Signature</a></li>
+            <li><a href="#h1_hashing">Hashing</a></li>
+            <li id="moon">🌙</li>
+        </ul>
+    </nav>
+
+    <hr>
+    <br><br>
+
+    <h1 id="h1_key_info">🔑 Key Info</h1>
+    <div id="div_key_info" class="grid"></div>
+    <button class="primary" type="button" id="btn_key_gen">Generate Keys</button>
+    <button class="secondary" type="button" id="btn_key_refresh">Refresh Keys</button>
+    <button class="contrast" type="button" id="btn_key_del">Delete keys</button>
+
+    <br><br><br>
+
+    <h1 id="h1_crypto">🔐 Cryptography</h1>
+    <input id="in_crypto_file" type="file">
+    <label>
+        Input
+        <textarea id="txt_in" rows="5"></textarea>
+    </label>
+
+    <div class="grid">
+        <!-- Algorithm type -->
+        <fieldset>
+            <legend>Algorithm type</legend>
+            <label for="algo_type_rsa">
+                <input type="radio" id="algo_type_rsa" name="algo_type" value="rsa" checked>
+                RSA
+            </label>
+            <label for="algo_type_aes">
+                <input type="radio" id="algo_type_aes" name="algo_type" value="aes">
+                AES-256-CBC
+            </label>
+        </fieldset>
+
+        <!-- Algorithm action -->
+        <fieldset>
+            <legend>Algorithm action</legend>
+            <label for="algo_act_enc">
+                <input type="radio" id="algo_act_enc" name="algo_act" value="enc" checked>
+                Encrypt
+            </label>
+            <label for="algo_act_dec">
+                <input type="radio" id="algo_act_dec" name="algo_act" value="dec">
+                Decrypt
+            </label>
+        </fieldset>
+        <div></div>
+        <div></div>
+    </div>
+
+    <button class="primary" type="button" id="btn_crypto">Do it</button>
+
+    <label>
+        Result
+        <textarea id="txt_out" rows="5" readonly></textarea>
+    </label>
+
+    <button class="primary" type="button" id="btn_crypto_download">Save result</button>
+
+    <br><br><br>
+
+    <h1 id="h1_digital_signature">🔏 Digital Signature</h1>
+    <h3>Sign</h3>
+    <input id="in_message_file" type="file">
+    <label>
+        Message
+        <textarea id="message_txt_in" rows="5"></textarea>
+    </label>
+    <label>
+        Signature
+        <textarea id="sign_txt_out" rows="5" readonly></textarea>
+    </label>
+    <button class="primary" type="button" id="btn_signature_download">Save signature</button>
+
+    <br>
+    <h3>Verify</h3>
+    <div class="grid">
+        <input id="in_message_file2" type="file">
+        <input id="in_signature_file" type="file">
+    </div>
+    <div class="grid">
+        <label>
+            Message
+            <textarea id="txt_message" rows="5"></textarea>
+        </label>
+        <label>
+            Signature
+            <textarea id="txt_signature" rows="5"></textarea>
+        </label>
+    </div>
+    <label>
+        <strong id="lbl_verification_message">&#8203;</strong>
+    </label>
+    <button class="primary" type="button" id="btn_verify_signature">Verify signature</button>
+
+    <br><br><br>
+
+    <h1 id="h1_hashing">#️⃣ Hashing</h1>
+    <input id="in_hash_file" type="file">
+    <label>
+        Input
+        <textarea id="hash_txt_in" rows="5"></textarea>
+    </label>
+    <label>
+        Result
+        <textarea id="hash_txt_out" rows="1" readonly></textarea>
+    </label>
+    <button class="primary" type="button" id="btn_hash_download">Save result</button>
+</main>
+<footer>
+    <p>&copy; Tin Tomašić 2023. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
